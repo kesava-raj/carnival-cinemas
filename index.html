@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carnival Cinemas Singapore</title>
+<style>
+:root{--bg:#f6f1f2;--card:#fff;--ink:#2b1216;--mute:#7b6468;--brand:#a3162a;--gold:#f0a919;--line:#e6d6d9;--hd:#4a0a14;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#160d0f;--card:#241518;--ink:#f6ebe6;--mute:#b99ea2;--brand:#d02a40;--line:#3d2529;--hd:#0f0709}}
+:root[data-theme="dark"]{--bg:#160d0f;--card:#241518;--ink:#f6ebe6;--mute:#b99ea2;--brand:#d02a40;--line:#3d2529;--hd:#0f0709}
+html{scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:12;background:var(--hd)}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;margin:0}
+button{font:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--hd);border-bottom:3px solid var(--gold)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:58px}
+.logo{font:700 22px Georgia,serif;color:#fff;background:none;border:0;padding:0;white-space:nowrap}
+.logo i{color:var(--gold);font-style:normal}
+nav{display:flex;gap:4px;overflow-x:auto}
+nav button{background:none;border:0;color:#f3dfd8;padding:8px 10px;border-radius:8px;white-space:nowrap}
+nav button:hover{background:#ffffff1f}
+.hero{background:linear-gradient(135deg,#7d0f20,#1c0a0d);color:#fff;padding:44px 0 52px}
+.marquee{border:2px solid var(--gold);border-radius:18px;padding:34px 26px;position:relative;background:#00000040}
+.marquee::before,.marquee::after{content:"";position:absolute;left:14px;right:14px;height:8px;background:radial-gradient(circle,var(--gold) 3px,transparent 4px) 0 0/22px 8px repeat-x}
+.marquee::before{top:-5px}.marquee::after{bottom:-5px}
+.hero h1{font-size:clamp(32px,6vw,58px);line-height:1.08;max-width:13em}
+.hero p{max-width:36em;color:#f3dfd8;margin:14px 0}
+.chip{display:inline-block;background:#ffffff22;border-radius:99px;padding:4px 13px;font-size:14px;margin:0 6px 8px 0}
+.btn{background:var(--gold);color:#2b1216;border:0;border-radius:10px;padding:11px 20px;font-weight:700}
+.btn.alt{background:var(--brand);color:#fff}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--ink);font-weight:500}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+section{padding:34px 0}
+h2{font-size:30px}
+.sub{color:var(--mute);margin:4px 0 0}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.pill{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:6px 14px}
+.pill.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.poster{aspect-ratio:4/5;display:flex;align-items:flex-end;padding:16px;color:#fff;font:700 25px/1.1 Georgia,serif}
+.info{padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1}
+.info p{margin:0;color:var(--mute);font-size:14px}
+.info .btn{margin-top:auto}
+.info h3{font-size:18px}
+.snacks{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:16px}
+.snack{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.snack b{display:block}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.visit p{margin:6px 0}
+a{color:var(--brand)}
+@media (prefers-color-scheme:dark){a{color:var(--gold)}}
+footer{background:var(--hd);color:#d9c3bd;padding:22px 0;font-size:14px}
+footer a{color:var(--gold)}
+.cols{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.panel h4{margin:14px 0 8px;font-size:16px}
+.panel h4:first-child{margin-top:0}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.screen{margin:18px auto 10px;width:70%;text-align:center;font-size:12px;color:var(--mute);border-top:5px solid var(--gold);border-radius:50% 50% 0 0/14px 14px 0 0;padding-top:4px}
+.seats{overflow-x:auto;padding-bottom:6px}
+.row{display:flex;gap:4px;justify-content:center;margin-bottom:4px;min-width:max-content}
+.row b{width:18px;font-size:12px;color:var(--mute);align-self:center}
+.seat{width:26px;height:26px;border-radius:7px 7px 3px 3px;border:1px solid var(--line);background:var(--card);padding:0;font-size:10px;color:var(--mute)}
+.seat.prem{border-color:var(--gold)}
+.seat.sel{background:var(--brand);color:#fff;border-color:var(--brand)}
+.seat.tk{background:var(--line);opacity:.5;cursor:not-allowed}
+.gap{margin-right:14px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--mute);margin-top:10px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;border:1px solid var(--line);margin-right:5px;vertical-align:-1px}
+.legend .a::before{border-color:var(--gold)}.legend .b::before{background:var(--brand)}.legend .c::before{background:var(--line)}
+.line{display:flex;justify-content:space-between;gap:8px;margin:4px 0;font-size:15px}
+.step{display:flex;align-items:center;gap:6px}
+.step button{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:none;color:var(--ink);padding:0}
+input{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;margin-bottom:8px}
+.err{color:var(--brand);font-size:14px;margin:8px 0}
+.total{font:700 22px Georgia,serif;display:flex;justify-content:space-between;margin:12px 0}
+.ticket{max-width:520px;margin:0 auto;background:var(--card);border:2px dashed var(--gold);border-radius:16px;padding:24px;text-align:center}
+.ticket h2{margin:8px 0}
+.code{font:700 30px ui-monospace,monospace;letter-spacing:3px;color:var(--brand);margin:8px 0}
+@media (prefers-color-scheme:dark){.code{color:var(--gold)}}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:10px}
+@media (max-width:820px){.cols,.visit{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<button class="logo" data-act="go" data-v="home">Carnival <i>Cinemas</i></button>
+<nav><button data-act="go" data-v="home">Now showing</button><button data-act="scroll" data-t="snacks">Snacks</button><button data-act="scroll" data-t="visit">Visit us</button><button data-act="go" data-v="tickets">My tickets</button></nav>
+</div></header>
+<main id="app"></main>
+<footer><div class="wrap">Carnival Cinemas Singapore, 6001 Beach Rd, Golden Mile Tower, Singapore 199589. Demo site with sample films and a simulated booking backend.</div></footer>
+<script>
+const $=s=>document.querySelector(s);
+const sg=n=>'S$'+n.toFixed(2);
+const ROWS=['A','B','C','D','E','F','G','H'];
+const TIMES=['11:00','14:30','18:00','21:30'];
+const M=[
+{id:'m1',t:'Thunder Road',l:'Tamil',g:'Action',d:152,c:['#a3162a','#2a0a10'],s:'A retired racer returns to Chennai’s highways to settle an old score.'},
+{id:'m2',t:'Monsoon Wedding Run',l:'Hindi',g:'Comedy',d:138,c:['#0f6b6e','#08262c'],s:'Three cousins, one runaway groom and a very long road to Jaipur.'},
+{id:'m3',t:'Kingdom of Dust',l:'Telugu',g:'Epic',d:168,c:['#8a5a12','#2a1a05'],s:'A forgotten prince unites desert clans against an empire.'},
+{id:'m4',t:'Backwater Nights',l:'Malayalam',g:'Thriller',d:124,c:['#1f4d3a','#0a1f18'],s:'A ferry operator finds more than fish in his midnight nets.'},
+{id:'m5',t:'Little Singapore Diaries',l:'Tamil',g:'Family',d:129,c:['#5b2a86','#1d0f2e'],s:'An immigrant family opens a tiny kopitiam in Little India.'},
+{id:'m6',t:'Midnight Mumbai',l:'Hindi',g:'Crime',d:146,c:['#222a55','#0a0c1c'],s:'One detective, one night and a city that never tells the truth.'}
+];
+const SNACKS=[{id:'pop',n:'Salted popcorn',p:6},{id:'mas',n:'Masala popcorn',p:6.5},{id:'sam',n:'Veg samosa (2)',p:3.5},{id:'cha',n:'Masala chai',p:2.5},{id:'cmb',n:'Popcorn + drink combo',p:9}];
+const days=[0,1,2,3].map(i=>{const d=new Date();d.setDate(d.getDate()+i);return{k:d.toLocaleDateString('en-CA'),n:i?d.toLocaleDateString('en-SG',{weekday:'short',day:'numeric',month:'short'}):'Today'}});
+
+/* Simulated backend: same shape as REST endpoints, stored in this browser */
+let DB={bookings:[]};
+try{DB=JSON.parse(localStorage.getItem('carnival-db'))||DB}catch(e){}
+const save=()=>{try{localStorage.setItem('carnival-db',JSON.stringify(DB))}catch(e){}};
+function seeded(id){let h=7;for(const c of id)h=(h*31+c.charCodeAt(0))>>>0;const o=[];for(const r of ROWS)for(let n=1;n<=12;n++){h=(h*1103515245+12345)>>>0;if((h>>>16)%100<20)o.push(r+n)}return o}
+const api={
+ taken:async id=>[...seeded(id),...DB.bookings.filter(b=>b.show===id).flatMap(b=>b.seats)],
+ book:async p=>{const t=await api.taken(p.show);if(p.seats.some(s=>t.includes(s)))throw new Error('Some seats were just taken. Pick different seats.');const b={...p,code:'CC'+Math.random().toString(36).slice(2,8).toUpperCase(),at:Date.now()};DB.bookings.push(b);save();return b},
+ find:async q=>{q=q.trim().toUpperCase();return DB.bookings.filter(b=>b.code===q||b.phone.toUpperCase()===q)}
+};
+
+const S={view:'home',lang:'All',m:null,date:days[0].k,time:TIMES[0],seats:[],snacks:{},taken:[],f:{name:'',email:'',phone:''},done:null,err:'',q:'',found:null};
+const price=s=>'GH'.includes(s[0])?16:11;
+const mv=id=>M.find(m=>m.id===id);
+const snackTotal=()=>SNACKS.reduce((a,s)=>a+(S.snacks[s.id]||0)*s.p,0);
+const total=()=>S.seats.reduce((a,s)=>a+price(s),0)+snackTotal();
+const showId=()=>S.m.id+'|'+S.date+'|'+S.time;
+async function load(){S.seats=[];S.taken=await api.taken(showId());render()}
+
+function home(){
+ const langs=['All',...new Set(M.map(m=>m.l))];
+ const list=M.filter(m=>S.lang==='All'||m.l===S.lang);
+ return `<div class="hero"><div class="wrap"><div class="marquee">
+ <span class="chip">4.1 rating from 1,156 Google reviews</span><span class="chip">Located in Golden Theatre</span>
+ <h1>Big screen. Big hall. Indian cinema, the way it should feel.</h1>
+ <p>Spacious halls, an authentic atmosphere and affordable snacks at Golden Mile Tower. Pick a film, choose your seats and book in a minute.</p>
+ <button class="btn" data-act="scroll" data-t="films">Book tickets</button></div></div></div>
+ <section id="films"><div class="wrap"><h2>Now showing</h2><p class="sub">Sample listings. Four shows a day for the next four days.</p>
+ <div class="filters">${langs.map(l=>`<button class="pill ${l===S.lang?'on':''}" data-act="lang" data-l="${l}">${l}</button>`).join('')}</div>
+ <div class="grid">${list.map(m=>`<article class="card"><div class="poster" style="background:linear-gradient(160deg,${m.c[0]},${m.c[1]})">${m.t}</div>
+ <div class="info"><h3>${m.t}</h3><p>${m.l}, ${m.g}, ${m.d} min</p><p>${m.s}</p><button class="btn alt" data-act="book" data-id="${m.id}">Book tickets</button></div></article>`).join('')}</div></div></section>
+ <section id="snacks"><div class="wrap"><h2>Snacks and drinks</h2><p class="sub">Add them while you book. Collect at the counter with your ticket code.</p>
+ <div class="snacks">${SNACKS.map(s=>`<div class="snack"><b>${s.n}</b>${sg(s.p)}</div>`).join('')}</div></div></section>
+ <section id="visit"><div class="wrap visit"><div><h2>Visit us</h2>
+ <p><b>Address</b><br>6001 Beach Rd, Golden Mile Tower, Singapore 199589</p>
+ <p><b>Phone</b><br><a href="tel:+6569027095">+65 6902 7095</a></p>
+ <p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Carnival+Cinemas+Singapore+6001+Beach+Rd">Get directions</a></p></div>
+ <div><h2>Prices</h2><p><b>Standard (rows A to F)</b><br>${sg(11)} per seat</p><p><b>Recliner (rows G and H)</b><br>${sg(16)} per seat</p><p>Follow us on Facebook, Instagram and X.</p></div></div></section>`;
+}
+
+function book(){
+ const m=S.m,sel=S.seats;
+ const seatRow=r=>`<div class="row"><b>${r}</b>${Array.from({length:12},(_,i)=>{const id=r+(i+1),tk=S.taken.includes(id);
+ return `<button class="seat ${'GH'.includes(r)?'prem':''} ${sel.includes(id)?'sel':''} ${tk?'tk':''} ${i==5?'gap':''}" ${tk?'disabled':''} data-act="seat" data-s="${id}" aria-label="Seat ${id}">${i+1}</button>`}).join('')}</div>`;
+ return `<section><div class="wrap"><button class="btn ghost" data-act="go" data-v="home">Back to films</button>
+ <h2 style="margin-top:14px">${m.t}</h2><p class="sub">${m.l}, ${m.g}, ${m.d} min</p>
+ <div class="cols" style="margin-top:16px"><div class="panel">
+ <h4>Day</h4><div class="chips">${days.map(d=>`<button class="pill ${d.k===S.date?'on':''}" data-act="date" data-k="${d.k}">${d.n}</button>`).join('')}</div>
+ <h4>Showtime</h4><div class="chips">${TIMES.map(t=>`<button class="pill ${t===S.time?'on':''}" data-act="time" data-t="${t}">${t}</button>`).join('')}</div>
+ <h4>Seats</h4><div class="screen">Screen this way</div><div class="seats">${ROWS.map(seatRow).join('')}</div>
+ <div class="legend"><span>Standard ${sg(11)}</span><span class="a">Recliner ${sg(16)}</span><span class="b">Your pick</span><span class="c">Taken</span></div></div>
+ <div class="panel"><h4>Your order</h4>
+ <div class="line"><span>${sel.length?'Seats '+sel.join(', '):'No seats picked yet'}</span><b>${sg(sel.reduce((a,s)=>a+price(s),0))}</b></div>
+ <h4>Snacks</h4>${SNACKS.map(s=>`<div class="line"><span>${s.n}<br><small>${sg(s.p)}</small></span><span class="step"><button data-act="sn" data-id="${s.id}" data-d="-1" aria-label="Remove ${s.n}">-</button>${S.snacks[s.id]||0}<button data-act="sn" data-id="${s.id}" data-d="1" aria-label="Add ${s.n}">+</button></span></div>`).join('')}
+ <h4>Your details</h4>
+ <input data-f="name" placeholder="Full name" value="${S.f.name}" autocomplete="name">
+ <input data-f="email" type="email" placeholder="Email" value="${S.f.email}" autocomplete="email">
+ <input data-f="phone" type="tel" placeholder="Mobile number" value="${S.f.phone}" autocomplete="tel">
+ ${S.err?`<div class="err">${S.err}</div>`:''}
+ <div class="total"><span>Total</span><span>${sg(total())}</span></div>
+ <button class="btn alt" style="width:100%" data-act="pay">Confirm booking</button></div></div></div></section>`;
+}
+
+function qr(code){let h=0;for(const c of code)h=(h*33+c.charCodeAt(0))>>>0;let r='';for(let y=0;y<9;y++)for(let x=0;x<9;x++){h=(h*1103515245+12345)>>>0;if((h>>>16)&1)r+=`<rect x="${x*8}" y="${y*8}" width="8" height="8"/>`}return `<svg viewBox="0 0 72 72" width="96" height="96" fill="currentColor" role="img" aria-label="Ticket code pattern">${r}</svg>`}
+function ticketCard(b){const m=mv(b.show.split('|')[0]),[,d,t]=b.show.split('|');
+ return `<div class="ticket"><div>${qr(b.code)}</div><div class="code">${b.code}</div><h2>${m.t}</h2>
+ <p>${d} at ${t}, ${m.l}<br>Seats ${b.seats.join(', ')}</p><p><b>Paid ${sg(b.total)}</b> (demo, no real payment)<br>Booked by ${b.name}</p></div>`}
+function done(){return `<section><div class="wrap"><h2 style="text-align:center;margin-bottom:6px">You’re booked!</h2><p class="sub" style="text-align:center;margin-bottom:18px">Show this code at the counter. Find it later under My tickets.</p>${ticketCard(S.done)}</div></section>`}
+function tickets(){return `<section><div class="wrap" style="max-width:620px"><h2>My tickets</h2><p class="sub">Enter your ticket code or the mobile number you booked with.</p>
+ <div style="display:flex;gap:8px;margin-top:14px"><input id="q" placeholder="Ticket code or mobile number" value="${S.q}" style="margin:0"><button class="btn alt" data-act="find">Find</button></div>
+ ${S.found===null?'':S.found.length?S.found.map(ticketCard).map(h=>`<div style="margin-top:14px">${h}</div>`).join(''):'<div class="mini">No bookings found. Check the code or number and try again.</div>'}</div></section>`}
+
+function render(){$('#app').innerHTML=({home,book,done,tickets})[S.view]()}
+function go(v){S.view=v;S.err='';if(v==='tickets')S.found=null;render();scrollTo(0,0)}
+
+document.addEventListener('click',async e=>{
+ const b=e.target.closest('[data-act]');if(!b)return;const d=b.dataset;
+ switch(d.act){
+  case'go':go(d.v);break;
+  case'scroll':if(S.view!=='home'){go('home')}document.getElementById(d.t)?.scrollIntoView({behavior:'smooth'});break;
+  case'lang':S.lang=d.l;render();break;
+  case'book':S.m=mv(d.id);S.date=days[0].k;S.time=TIMES[0];S.snacks={};S.err='';S.view='book';await load();scrollTo(0,0);break;
+  case'date':S.date=d.k;await load();break;
+  case'time':S.time=d.t;await load();break;
+  case'seat':{const i=S.seats.indexOf(d.s);if(i>-1)S.seats.splice(i,1);else if(S.seats.length<8)S.seats.push(d.s);else S.err='You can book up to 8 seats at once.';render();break}
+  case'sn':{const v=Math.max(0,(S.snacks[d.id]||0)+ +d.d);S.snacks[d.id]=v;render();break}
+  case'pay':{const f=S.f;
+   if(!S.seats.length)S.err='Pick at least one seat.';
+   else if(!f.name.trim())S.err='Enter your name.';
+   else if(!/^\S+@\S+\.\S+$/.test(f.email))S.err='Enter a valid email address.';
+   else if(f.phone.replace(/\D/g,'').length<8)S.err='Enter a valid mobile number.';
+   else{try{S.done=await api.book({show:showId(),seats:[...S.seats],snacks:{...S.snacks},total:total(),name:f.name.trim(),email:f.email.trim(),phone:f.phone.trim()});S.err='';S.view='done';render();scrollTo(0,0);break}catch(x){S.err=x.message;await load();break}}
+   render();break}
+  case'find':S.found=await api.find(S.q);render();break;
+ }
+});
+document.addEventListener('input',e=>{const t=e.target;if(t.dataset.f)S.f[t.dataset.f]=t.value;if(t.id==='q')S.q=t.value});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='q')document.querySelector('[data-act="find"]').click()});
+render();
+</script>
+</body>
+</html>
